@@ -514,7 +514,7 @@ def skindef(skin_name: str, icons: list[str]) -> str:
 
 def write_utf16(path: Path, text: str) -> None:
     """Format 2 reads UTF-16; writing UTF-8 yields a silently ignored file."""
-    path.write_text(text.replace("\n", "\r\n"), encoding="utf-16")
+    path.write_text(text, encoding="utf-16", newline="\r\n")
 
 
 def build(source: Path, out_dir: Path, variant: str, codec: bool) -> Path:
